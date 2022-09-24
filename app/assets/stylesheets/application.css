@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --post-title: #564c4c
+}
+
+.main-section {
+  margin: 50px 15% 0px;
+}
+
+.new-post-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new-btn {
+  background-color: #0caaef;
+  border: 0px;
+  padding: 10px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.new-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.post-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 45px;
+}
+
+.blog-title {
+  font-size: 1.6rem;
+  color: #d50e0e;
+}
+
+.caption {
+  font-size: 2rem;
+  color: gray;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.post-containers a {
+  text-decoration: none;
+  color: var(--post-title);
+}
+
+.post-containers a:visited {
+  color: var(--post-title);
+}
+
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.article-title {
+  font-size: 1.4rem;
+}
+
+.article-title:hover {
+  text-decoration: underline;
+}
