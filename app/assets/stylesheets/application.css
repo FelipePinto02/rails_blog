@@ -21,7 +21,8 @@
 }
 
 :root {
-  --post-title: #564c4c
+  --post-title: #564c4c;
+  --section-title: #d50e0e
 }
 
 .main-section {
@@ -33,7 +34,8 @@
   justify-content: flex-end;
 }
 
-.new-btn {
+.new-btn,
+input[type="submit"] {
   background-color: #0caaef;
   border: 0px;
   padding: 10px;
@@ -46,6 +48,11 @@
   transform: scale(1.1);
 }
 
+input[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .post-containers {
   display: flex;
   flex-direction: column;
@@ -55,8 +62,8 @@
 }
 
 .blog-title {
-  font-size: 1.6rem;
-  color: #d50e0e;
+  font-size: 3rem;
+  color: var(--section-title);
 }
 
 .caption {
@@ -66,8 +73,12 @@
   margin-top: 15px;
 }
 
-.post-containers a {
+.post-containers a,
+.title-section a {
   text-decoration: none;
+}
+
+.post-containers a {
   color: var(--post-title);
 }
 
@@ -87,4 +98,53 @@
 
 .article-title:hover {
   text-decoration: underline;
+}
+
+.title-section {
+  padding: 35px;
+}
+
+.small {
+  font-size: 1.8rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 5% auto 0px;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title {
+  font-size: 2.6rem;
+  color: var(--section-title);
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  font-size: 1.4rem;
+  color: var(--post-title);
+}
+
+input[type="text"] {
+  padding: 3px 5px;
+}
+
+.form-container textarea {
+  height: 109px;
+  width: 184px;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 1.02rem;
 }

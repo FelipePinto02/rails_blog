@@ -1,3 +1,10 @@
-<h1>Edit Article</h1>
+<div class="title-section">
+  <%= link_to :root do %> <h1 class="blog-title small">My Rails Blog</h1> <% end %>
+</div>
+<div class="form-section">
+  <h1 class = "form-title">Edit Article</h1>
 
-<%= render 'form', article: @article %>
+  <div class="form-container">
+    <%= render 'form', article: @article %>
+  </div>
+</div>
