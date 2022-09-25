@@ -1,19 +1,35 @@
-<%= link_to 'Return', :root %>
+<div class="title-section">
+  <%= link_to :root do %> <h1 class="blog-title small">My Rails Blog</h1> <% end %>
+</div>
 
-<h1><%= @article.title %></h1>
+<div class="article-section">
+  <div class="article-content">
+    <div class="content-header">
+      <h1 class="article-title bigger"><%= @article.title %></h1>
+      <div class="article-controls">
+        <%= link_to edit_article_path(@article) do %> <i class="fa fa-edit"></i> <% end %>
+        <%= link_to article_path(@article), data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } do %> <i class="fa fa-trash"></i> <% end %>
+      </div>
+    </div>
+    <div class="article-body"><%= simple_format(@article.body) %></div>
+  </div>
+  <div class="article-comments">
+    <% unless @article.comments.empty? %>
+     <h1 class="bigger">Comments</h2>
+    <% end %>
+    <div class="comments-section">
+      <%= render @article.comments %>
+    </div>
+  </div>
+  <div class="comment-form">
+    <h1 class="bigger">Add a Comment:</h2>
+    <div class="form-container">
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+</div>
 
-<p><%= @article.body %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li> <%= link_to "Delete", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %> </li>
-</ul>
-
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>

@@ -1,9 +1,10 @@
-<p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
+<div class="comment">
+  <p>
+    <strong>@</strong><%= comment.commenter %>
   </p>
 
-  <p>
-    <strong>Comment:</strong>
+  <p class="comment-body">
     <%= comment.body %>
   </p>
+</div>
+

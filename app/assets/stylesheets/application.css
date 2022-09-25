@@ -74,12 +74,13 @@ input[type="submit"]:hover {
 }
 
 .post-containers a,
-.title-section a {
+.title-section a,
+.article-controls a {
   text-decoration: none;
 }
 
-.post-containers a {
-  color: var(--post-title);
+.post-containers a:hover {
+  text-decoration: underline;
 }
 
 .post-containers a:visited {
@@ -94,10 +95,7 @@ input[type="submit"]:hover {
 
 .article-title {
   font-size: 1.4rem;
-}
-
-.article-title:hover {
-  text-decoration: underline;
+  color: var(--post-title)
 }
 
 .title-section {
@@ -108,28 +106,30 @@ input[type="submit"]:hover {
   font-size: 1.8rem;
 }
 
-.form-section {
+.form-section,
+.article-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 30px;
   margin: 5% auto 0px;
   width: 50%;
+}
+
+.form-section {
+  align-items: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
 }
 
 .form-title {
   font-size: 2.6rem;
   color: var(--section-title);
-}
-
-form div {
-  margin-bottom: 20px;
 }
 
 .form-container label {
@@ -139,12 +139,76 @@ form div {
 
 input[type="text"] {
   padding: 3px 5px;
+  width: 750px;
+  font-size: 1.2rem;
 }
 
 .form-container textarea {
-  height: 109px;
-  width: 184px;
+  height: 300px;
+  width: 750px;
   padding: 5px;
   font-family: inherit;
-  font-size: 1.02rem;
+  font-size: 1.2rem;
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.article-section .article-title {
+  text-align: start;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bigger {
+  font-size: 2.4rem;
+}
+
+.article-body {
+  color: black;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.article-controls {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.article-comments,
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.comments-section {
+  margin-top: 15px;
+  gap: 35px;
+}
+
+.comment-body {
+  font-size: 1.1rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.fa {
+  color: black;
+  font-size: 24px;
 }
